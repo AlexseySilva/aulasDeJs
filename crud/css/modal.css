@@ -1,0 +1,93 @@
+.modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000000;
+    /* Agora vamos determinar o modal transparente */
+    opacity: 0;
+    /* Enviando modal para traz de todos os componentes */
+    z-index: -1;
+}
+.modal.active{
+    /* Estamos deixando o modal visivél */
+    opacity: 1;
+    /* Trazendo o modal para frente de todos os componentes */
+    z-index: 1;
+}
+.modal-content{
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+    margin: 15vh auto;
+    padding-bottom: 20px;
+    background-color: #ffffff;
+    box-shadow: 1px 1px 10px #000000;
+    gap: 20px;
+
+}
+
+.modal-header{
+    display: flex;
+    position: relative;
+    height: 40px;
+    justify-content: center;
+    font-size: 1rem;
+    line-height: 40px;
+}
+.modal-close{
+    position: absolute;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    cursor: pointer;
+}
+.modal-close:hover{
+    background-color:#ff4949;
+    color: #fff;   
+}
+.modal-form{
+    display: flex;
+    padding: 0 20px;
+    gap: 20px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+}
+.modal-field{
+    width: calc(50% - 10px);
+    height: 40px;
+    border-style: none;
+    box-shadow: 0 0 2px #000000;
+    padding: 0 10;
+    font-size: 1rem;
+
+}
+
+.modal-field:focus{
+    border: 2px solid var(--primari-color);
+    text-align: right;
+    padding: 0 20px;
+}
+
+@media(max-width:480px){
+    .modal{
+        top:100%;
+        transition: all 1s ease;
+    }
+    .modal.active{
+        top: 0;
+
+    }
+    .modal-content{
+        margin: 0;
+        width: 100%;
+        position: fixed;
+
+    }
+    .moda-field{
+        width: 100%;
+    }
+}
